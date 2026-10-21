@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Boldonse";
+  src: url("/fonts/Boldonse-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/MonaSans-Variable.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+/* ===== MODO WIREFRAME (escala de grises) ===== */
+@theme {
+  --color-azul: #2b2b2b;          /* texto principal, títulos, botón primario */
+  --color-celeste: #cfcfcf;       /* bordes de los campos */
+  --color-celeste-claro: #ffffff; /* fondo de pantalla */
+  --color-crema: #f0f0f0;         /* fondo de un campo con error */
+  --color-marron: #444444;        /* texto secundario y errores */
+
+  --color-estado-rojo: #ec2611;
+  --color-estado-amarillo: #ffc84d;
+  --color-estado-verde: #4fcf57;
+
+--font-titulo: "Boldonse", system-ui, sans-serif;
+--font-sans: "Mona Sans", system-ui, sans-serif;
+}
+
+.font-titulo { font-weight: 400; }
+
+body { @apply bg-celeste-claro font-sans text-marron; }
+
+/* ===== IDENTIDAD DE MARCA (para cuando pases a alta fidelidad) =====
+@font-face {
+  font-family: "Boldonse";
+  src: url("/fonts/Boldonse-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/MonaSans-Variable.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+@theme {
+  --color-azul: #183b64;
+  --color-celeste: #c0d9f3;
+  --color-celeste-claro: #eef4fb;
+  --color-crema: #fff6e0;
+  --color-marron: #541f11;
+  --font-titulo: "Boldonse", system-ui, sans-serif;
+  --font-sans: "Mona Sans", system-ui, sans-serif;
+}
+.font-titulo { font-weight: 400; }
+*/
