@@ -11,7 +11,7 @@ export default function Bienvenida() {
   return (
     <LayoutAuth>
       <h1 className="text-2xl font-semibold uppercase leading-tight text-azul">
-        La libertad de viajar, con la confianza de estar bien acompañado
+        La libertad de viajar, con la tranquilidad de ir bien acompañado
       </h1>
       <div className="mt-6 flex flex-col gap-3">
         <Boton onClick={() => navigate('/ingresar')}>Iniciar sesión</Boton>

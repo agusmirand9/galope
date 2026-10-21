@@ -1,14 +1,23 @@
 @import "tailwindcss";
 
+/* Las fuentes de /public/fonts son .ttf (antes el CSS buscaba .woff2 que no existen y nunca cargaban). */
 @font-face {
   font-family: "Boldonse";
-  src: url("/fonts/Boldonse-Regular.woff2") format("woff2");
+  src: url("/fonts/Boldonse-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/MonaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Mona Sans";
-  src: url("/fonts/MonaSans-Variable.woff2") format("woff2");
-  font-weight: 200 900;
+  src: url("/fonts/MonaSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
   font-display: swap;
 }
 
@@ -35,13 +44,13 @@ body { @apply bg-celeste-claro font-sans text-marron; }
 /* ===== IDENTIDAD DE MARCA (para cuando pases a alta fidelidad) =====
 @font-face {
   font-family: "Boldonse";
-  src: url("/fonts/Boldonse-Regular.woff2") format("woff2");
+  src: url("/fonts/Boldonse-Regular.ttf") format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: "Mona Sans";
-  src: url("/fonts/MonaSans-Variable.woff2") format("woff2");
-  font-weight: 200 900;
+  src: url("/fonts/MonaSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
   font-display: swap;
 }
 @theme {

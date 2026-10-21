@@ -8,14 +8,19 @@ export function AuthProvider({ children }) {
   const [cargando, setCargando] = useState(true)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session)
-      setCargando(false)
-    })
+    let activo = true
+    supabase.auth.getSession()
+      .then(({ data }) => { if (activo) setSession(data.session) })
+      .catch(() => { /* sin conexión o sesión dañada: se sigue como visitante */ })
+      .finally(() => { if (activo) setCargando(false) }) // sin esto, un error dejaba el Splash para siempre
+
     const { data: listener } = supabase.auth.onAuthStateChange((_evento, nueva) => {
       setSession(nueva)
     })
-    return () => listener.subscription.unsubscribe()
+    return () => {
+      activo = false
+      listener.subscription.unsubscribe()
+    }
   }, [])
 
   const value = {
